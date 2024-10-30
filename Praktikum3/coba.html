@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom Halaman</title>
+</head>
+<body>
+
+    <h1>Ini adalah judul</h1>
+    <p>Ini adalah paragraf dengan ukuran halaman default.</p>
+
+    <button id="zoomInBtn">Perbesar Halaman</button>
+    <button id="zoomOutBtn">Perkecil Halaman</button>
+
+    <script>
+        // Variabel untuk menyimpan level zoom saat ini
+        let zoomLevel = 1;
+
+        // Fungsi untuk memperbesar halaman
+        document.getElementById('zoomInBtn').addEventListener('click', function() {
+            zoomLevel += 0.1; // Menambah level zoom sebesar 10%
+            document.body.style.zoom = zoomLevel;
+        });
+
+        // Fungsi untuk memperkecil halaman
+        document.getElementById('zoomOutBtn').addEventListener('click', function() {
+            if (zoomLevel > 0.1) { // Batas minimal zoom (jangan sampai 0 atau negatif)
+                zoomLevel -= 0.1; // Mengurangi level zoom sebesar 10%
+                document.body.style.zoom = zoomLevel;
+            }
+        });
+    </script>
+
+</body>
+</html>
